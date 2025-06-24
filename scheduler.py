@@ -19,12 +19,25 @@ def displayMenu():
     print("6. Exit")
 
 def addExam():
-#Input form(ish) to add a new exam
     examName = input("Enter Exam Name: ")
+    # Check for duplicate exam name
+    for exam in existingExams:
+        if exam['name'].lower() == examName.lower():
+            print("⚠️ Exam with that name already exists. Please use a different name.")
+            return
+
     examDate = input("Enter Date (YYYY-MM-DD): ")
     examTime = input("Enter Time (HH:MM): ")
     examRoom = input("Enter Room: ")
-    #Add the exam to the existing exams list
+
+    # Check for conflicting schedule (same date & time, and room)
+    for exam in existingExams:
+        if (exam['date'] == examDate and 
+            exam['time'] == examTime and 
+            exam['room'].lower() == examRoom.lower()):
+            print("⛔ Conflict detected! Another exam is already scheduled in that room at that time.")
+            return
+
     existingExams.append({
         "name": examName,
         "date": examDate,
@@ -101,3 +114,12 @@ while True:
         break
     else:
         print("❌ Invalid choice. Try again.")
+
+
+
+# good day ma'am Mila, I am Anthony and I have  developed a chrome extension that
+# might help you with the upcomingg pre-reg it is a simple Timetable that let you
+# visualize the shedule to avoid conflicts etc .  twas created bcuz its time
+# consuming fixing conflicts and waiting in line in the faculty
+# here's the link and also it is pinned in my github profile
+# https://github.com/pablojabb/CustomTableViewer
