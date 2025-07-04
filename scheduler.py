@@ -117,9 +117,3 @@ while True:
 
 
 
-# good day ma'am Mila, I am Anthony and I have  developed a chrome extension that
-# might help you with the upcomingg pre-reg it is a simple Timetable that let you
-# visualize the shedule to avoid conflicts etc .  twas created bcuz its time
-# consuming fixing conflicts and waiting in line in the faculty
-# here's the link and also it is pinned in my github profile
-# https://github.com/pablojabb/CustomTableViewer
